@@ -1,7 +1,20 @@
-import { FontAwesome } from '@expo/vector-icons';
-import * as Font from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect, useState } from 'react';
+import { FontAwesome } from "@expo/vector-icons";
+import * as Font from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect, useState } from "react";
+import {
+  useFonts,
+  Barlow_100Thin,
+  Barlow_200ExtraLight,
+  Barlow_300Light,
+  Barlow_400Regular,
+  Barlow_500Medium,
+  Barlow_600SemiBold,
+  Barlow_700Bold,
+  Barlow_700Bold_Italic,
+  Barlow_800ExtraBold,
+  Barlow_900Black,
+} from "@expo-google-fonts/barlow";
 
 export default function useCachedResources() {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -15,7 +28,16 @@ export default function useCachedResources() {
         // Load fonts
         await Font.loadAsync({
           ...FontAwesome.font,
-          'space-mono': require('../assets/fonts/SpaceMono-Regular.ttf'),
+          Barlow_100Thin,
+          Barlow_200ExtraLight,
+          Barlow_300Light,
+          Barlow_400Regular,
+          Barlow_500Medium,
+          Barlow_600SemiBold,
+          Barlow_700Bold,
+          Barlow_700Bold_Italic,
+          Barlow_800ExtraBold,
+          Barlow_900Black,
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service
